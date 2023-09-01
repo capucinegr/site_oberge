@@ -1,0 +1,15 @@
+// Sélectionnez les éléments nécessaires
+const carouselItems = document.querySelector('.carousel-items');
+const carouselItemWidth = carouselItems.querySelector('.carousel-item').offsetWidth;
+
+// Fonction pour faire défiler les avis
+function scrollCarousel() {
+  carouselItems.style.transform = `translateX(-${carouselItemWidth}px)`;
+  setTimeout(() => {
+    carouselItems.appendChild(carouselItems.firstElementChild);
+    carouselItems.style.transform = 'translateX(0)';
+  }, 5000);
+}
+
+// Appeler la fonction de défilement automatique
+setInterval(scrollCarousel, 6000);
